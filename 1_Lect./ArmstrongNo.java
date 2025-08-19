@@ -5,10 +5,24 @@ import java.util.Scanner;
         System.out.println("Enter a no. : ");
         int a  = in.nextInt();
         Armstrong(a);
-       
 
+        if (Armstrong(a)) {
+            System.out.println(a + " is an Armstrong number.");
+        } else {
+            System.out.println(a + " is NOT an Armstrong number.");
+        }
+
+
+         // if we have  to print all Armstrong no we apply for loop nd give argument in Armstrong(i)
+        System.out.println("All 3-digit Armstrong numbers:");
+        for (int i = 100; i < 1000; i++) {
+            if (Armstrong(i)) {
+                System.out.println(i);
+            
+        }
     }
-    static void Armstrong(int a){
+    }
+    static boolean Armstrong(int a){
  int original = a;
   int sum =0;
   while(a>0){
@@ -16,13 +30,7 @@ import java.util.Scanner;
         int cube = rem * rem * rem;
         sum+=cube;
         a=a/10;
-
   }
-  if (sum ==original){
-System.out.println("It is armstrong no.: " + original);
-} else{
-    System.out.println("it is not an armstrong no.: " + original);
-}
+return sum==original;
     }
-    
  }
